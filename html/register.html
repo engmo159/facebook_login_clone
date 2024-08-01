@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Register Page</title>
+  </head>
+  <body>
+    <!-- page -->
+    <div class="h-screen bg-slate-300 pt-12">
+      <!--register card -->
+
+      <div
+        class="bg-white w-1/2 mx-auto rounded-lg shadow-xl font-bold text-blue-700"
+      >
+        <!-- name -->
+        <div class="bg-blue-500 text-white text-center font-bold text-3xl py-4">
+          Create Account
+        </div>
+        <!-- form -->
+        <div class="px-8">
+          <form
+            class="grid grid-rows-5 grid-cols-2 gap-4 py-8"
+            onsubmit="return submitRegisterHandler()"
+            action="../index.html"
+          >
+            <!-- first name -->
+            <div class="flex flex-col">
+              <div
+                id="nameFaultDiv"
+                class="text-red-500 font-bold text-lg hidden fault"
+              >
+                please enter valid UserName ⛔
+              </div>
+              <div>
+                <label id="nameLabel" for="nameInput">First Name :</label>
+              </div>
+              <div>
+                <input
+                  id="nameInput"
+                  type="text"
+                  class="border-gray-400 rounded-md placeholder-blue-400 w-full"
+                  placeholder="Enter your first name"
+                />
+              </div>
+            </div>
+            <!-- last name -->
+            <div class="flex flex-col">
+              <div
+                id="lastNameFaultDiv"
+                class="text-red-500 font-bold text-lg hidden fault"
+              >
+                please enter valid LastName ⛔
+              </div>
+              <div>
+                <label id="lastNameLabel" for="lastNameInput"
+                  >Last Name :</label
+                >
+              </div>
+              <div>
+                <input
+                  id="lastNameInput"
+                  type="text"
+                  class="border-gray-400 rounded-md placeholder-blue-400 w-full"
+                  placeholder="Enter your last name"
+                />
+              </div>
+            </div>
+            <!-- email -->
+            <div class="flex flex-col">
+              <div
+                id="emailFaultDiv"
+                class="text-red-500 font-bold text-lg hidden fault"
+              >
+                please enter valid email ⛔
+              </div>
+              <div>
+                <label id="emailLabel" for="emailInput">email :</label>
+              </div>
+              <div>
+                <input
+                  id="emailInput"
+                  type="email"
+                  class="border-gray-400 rounded-md placeholder-blue-400 w-full"
+                  placeholder="Enter your email"
+                />
+              </div>
+            </div>
+            <!-- phone  -->
+            <div class="flex flex-col">
+              <div
+                id="phoneFaultDiv"
+                class="text-red-500 font-bold text-lg hidden fault"
+              >
+                please enter 10 numbers ⛔
+              </div>
+              <div>
+                <label id="phoneLabel" for="phoneInput">Phone Number :</label>
+              </div>
+              <div>
+                <input
+                  id="phoneInput"
+                  type="text"
+                  class="border-gray-400 rounded-md placeholder-blue-400 w-full"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+            </div>
+            <!-- password -->
+            <div class="flex flex-col">
+              <div
+                id="passwordFaultDiv"
+                class="text-red-500 font-bold text-lg hidden fault"
+              >
+                password 6 characters minimum ⛔
+              </div>
+              <div>
+                <label id="passwordLabel" for="passwordInput">Password :</label>
+              </div>
+              <div>
+                <input
+                  id="passwordInput"
+                  type="password"
+                  class="border-gray-400 rounded-md placeholder-blue-400 w-full"
+                  placeholder="Enter your password"
+                />
+              </div>
+            </div>
+            <!-- confPassword -->
+            <div class="flex flex-col">
+              <div
+                id="confPasswordFaultDiv"
+                class="text-red-500 font-bold text-lg hidden fault"
+              >
+                please enter same password ⛔
+              </div>
+              <div>
+                <label id="confPasswordLabel" for="confPasswordInput"
+                  >configure password :</label
+                >
+              </div>
+              <div>
+                <input
+                  id="confPasswordInput"
+                  type="password"
+                  class="border-gray-400 rounded-md placeholder-blue-400 w-full"
+                  placeholder="Enter your password"
+                />
+              </div>
+            </div>
+            <!-- gender -->
+            <div class="flex flex-col">
+              <div
+                id="genderFaultDiv"
+                class="text-red-500 font-bold text-lg hidden fault"
+              >
+                please enter gender ⛔
+              </div>
+              <div><label id="genderLabel">Gender:-</label></div>
+              <!-- male input -->
+              <div class="flex gap-2">
+                <div>
+                  <input
+                    id="maleInput"
+                    type="radio"
+                    value="male"
+                    name="gender"
+                    class="border-gray-400 rounded-md placeholder-blue-400"
+                  />
+                </div>
+                <div class="text-gray-700">
+                  <label id="maleLabel" for="maleInput">Male</label>
+                </div>
+              </div>
+              <!-- female input -->
+              <div class="flex gap-2">
+                <div>
+                  <input
+                    id="femaleInput"
+                    type="radio"
+                    class="border-gray-400 rounded-md placeholder-blue-400"
+                    value="female"
+                    name="gender"
+                  />
+                </div>
+                <div class="text-gray-700">
+                  <label id="femaleLabel" for="femaleInput">Female</label>
+                </div>
+              </div>
+            </div>
+            <!-- birth date -->
+            <div class="flex flex-col">
+              <div
+                id="birthDateFaultDiv"
+                class="text-red-500 font-bold text-lg hidden fault"
+              >
+                please enter your birth Date ⛔
+              </div>
+              <div>
+                <label id="birthDateLabel" for="birthDateInput"
+                  >BirthDate :</label
+                >
+              </div>
+              <div>
+                <input
+                  id="birthDateInput"
+                  type="date"
+                  class="border-gray-400 rounded-md placeholder-blue-400 w-full"
+                  placeholder="Enter your  birthDate"
+                />
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="text-white bg-blue-500 text-md rounded hover:bg-blue-800 transition-all w-1/3 h-1/2"
+              onclick="resetFunction()"
+            >
+              reset
+            </button>
+            <button
+              type="submit"
+              class="text-white bg-blue-500 text-md rounded hover:bg-blue-800 transition-all w-1/3 h-1/2"
+            >
+              register
+            </button>
+          </form>
+        </div>
+        <!-- end form -->
+      </div>
+    </div>
+
+    <script src="../js/register.js"></script>
+  </body>
+</html>

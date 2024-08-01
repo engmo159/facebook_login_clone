@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Facebook-Login</title>
+  </head>
+  <body>
+    <main class="flex justify-evenly items-center h-screen bg-slate-100 px-44">
+      <!-- logo -->
+      <div class="w-1/3">
+        <h1 class="text-7xl text-blue-600">Facebook</h1>
+        <p class="text-2xl font-semibold text-gray-500 mt-8">
+          Connect with friends and the world around you on Facebook.
+        </p>
+      </div>
+      <!--login card -->
+      <div
+        class="flex flex-col justify-center bg-white p-12 rounded-lg shadow-xl w-1/3 font-bold text-blue-700"
+      >
+        <!-- form -->
+        <div>
+          <form
+            class="flex flex-col gap-4"
+            action="html/facebook.html"
+            onsubmit="return submitHandler()"
+          >
+            <div
+              id="invalidSubmitDiv"
+              class="text-red-500 font-bold text-lg hidden"
+            >
+              Invalid Email or Password ⛔
+            </div>
+            <input
+              id="emailInput"
+              type="email"
+              class="border-gray-400 rounded-md placeholder-blue-400"
+              placeholder="Type your email address"
+            />
+            <input
+              type="password"
+              id="passInput"
+              class="border-gray-400 rounded-md placeholder-blue-400"
+              placeholder="Password"
+            />
+            <div>
+              <input type="checkbox" id="passCheckBox" />
+              <label for="pass">Show Password</label>
+            </div>
+            <div
+              id="passMessage"
+              class="font-semibold text-sm text-red-500 hidden"
+            >
+              <span id="iconSpan" class="font-bold text-xl">x</span>
+              password should be more than
+              <span class="font-bold"> 6 characters</span>
+            </div>
+            <button
+              type="submit"
+              class="text-white bg-blue-500 text-md py-2 rounded hover:bg-blue-800 transition-all"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+        <!-- end form -->
+        <div class="flex flex-col justify-center items-center gap-4 mt-4">
+          <div>
+            <a href="#" class="text-blue-500 text-center hover:underline"
+              >Forget Password?</a
+            >
+          </div>
+          <div class="h-1 w-full bg-slate-300"></div>
+          <div>
+            <button
+              class="text-white bg-green-600 text-md py-2 px-4 rounded hover:bg-green-800 transition-all w-fit"
+            >
+              <a href="/html/register.html">Create New Account</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
